@@ -6,6 +6,13 @@ class LinksController < ApplicationController
   end
 
   def create
-binding.pry
+    link = Link.new(link_url)
+    binding.pry
+  end
+
+  private
+
+  def link_url
+    params.permit(:url)
   end
 end
