@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20170605232227) do
 
   create_table "links", force: :cascade do |t|
     t.string "url"
+    t.integer "view_count", default: 0
   end
 
 end
