@@ -1,6 +1,6 @@
 <h1>Index</h1>
 
-<%= @links.each_with_index do |link, index| %>
+<% @links.each_with_index do |link, index| %>
   <% link_number = (index + 1) %>
-  
+  <%= link_number %>. <%=link_to link.url, link.url %> Views: <%= link.view_count %><br>
 <% end %>
