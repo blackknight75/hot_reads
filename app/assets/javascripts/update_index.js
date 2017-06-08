@@ -6,7 +6,8 @@ setInterval(function(){
 function checkDatabase(){
   $.ajax({
     method: "GET",
-    url: "https://boiling-woodland-88175.herokuapp.com/api/v1/links"
+    // url: "https://boiling-woodland-88175.herokuapp.com/api/v1/links"
+    url: "/api/v1/links"
   }).then(function(links){
     var linkCount = 0
     if(links.length == linkCount){
@@ -14,8 +15,13 @@ function checkDatabase(){
     } else {
       linkCount = links.count
       location.reload();
+      sendViewCount(links);
     }
   })
+}
+
+function sendViewCount(links){
+  // debugger;
 }
 
 $(document).ready(function(){
