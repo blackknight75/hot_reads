@@ -2,7 +2,7 @@ class LinksController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @links = Link.order(:view_count).reverse
+    @links = (Link.order('view_count DESC').limit(10)
   end
 
   def create

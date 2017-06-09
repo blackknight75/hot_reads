@@ -35,7 +35,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
   # Adds support for Capybara system testing and selenium driver
+  gem 'rspec-rails'
+  gem 'simplecov', :require => false
+  gem 'database_cleaner'
   gem 'capybara', '~> 2.13'
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
   gem 'selenium-webdriver'
 end
 
