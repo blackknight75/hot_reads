@@ -1,6 +1,6 @@
-# URL Lockbox
+# Hot Reads
 
-> This is an awesome app for keeping tack of all the links that you like. You can keep track of which ones you have and have not read. There is also a companion app that you can use in conjunction with this app to see the top 10 hottest links by view. When you mark a url as read it will add to the view count on the Hot Reads app.
+> This is an awesome app for viewing the top 10 links from URL Lockbox and how many views they have. This communicates with URL Lockbox to display tags based on the links position on the top 10 list.
 
 #### Production Links
 
@@ -12,7 +12,7 @@
 
 #### Clone the repo
 
-``` $ git clone https://github.com/blackknight75/m4-final-starter ```
+``` $ git clone https://github.com/blackknight75/hot_reads ```
 
 #### Run
 
@@ -21,6 +21,25 @@
 ``` $ rake db:create db:migrate ```
 
 #### If running locally
+
+* Make sure to switch the URL to localhost before running the server for developing locally.
+
+``` function checkDatabase(){
+  $.ajax({
+    method: "GET",
+    //url: "https://boiling-woodland-88175.herokuapp.com/api/v1/links"
+    url: "/api/v1/links"
+  }).then(function(links){
+    var linkCount = 0
+    if(links.length == linkCount){
+
+    } else {
+      linkCount = links.count
+      location.reload();
+    }
+  })
+}
+```
 
 #### Launch Server
 
@@ -37,6 +56,25 @@
 ``` $ rspec ```
 
 ## Deploy to Heroku
+
+* Make sure to switch the URL to production before running the server for developing
+
+``` function checkDatabase(){
+  $.ajax({
+    method: "GET",
+    url: "https://boiling-woodland-88175.herokuapp.com/api/v1/links"
+    // url: "/api/v1/links"
+  }).then(function(links){
+    var linkCount = 0
+    if(links.length == linkCount){
+
+    } else {
+      linkCount = links.count
+      location.reload();
+    }
+  })
+}
+```
 
 * Make sure you precompile your JavaScript before you push to your repository and to Heroku
 
