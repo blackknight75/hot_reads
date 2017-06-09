@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'an authenticated user visits /' do
-  it 'sees the top 10 most marked-as-read links' do
+describe 'when user visits /' do
+  it 'sees the top 10 links' do
     Link.create!(url: 'http://google.com', view_count: 24)
     Link.create!(url: 'http://ign.com', view_count: 15)
     Link.create!(url: 'http://beef.com', view_count: 14)
@@ -16,10 +16,7 @@ describe 'an authenticated user visits /' do
 
     visit root_path
 
-    within('h1') do
       expect(page).to have_content('Index')
-    end
-
       expect(page).to have_content('1. http://google.com')
       expect(page).to have_content('2. http://ign.com')
       expect(page).to have_content('3. http://beef.com')
